@@ -25,5 +25,5 @@ jobs:
           source_gh_token: ${{ secrets.PAT }}
           target_gh_token: ${{ secrets.PAT }}
           source_repo_path: trivoallan/upstream
-          upstream_branch: trunk # defaults to main
+          upstream_branch: main # defaults to main
           pr_labels: upstream-sync # optional, no default
