@@ -2,7 +2,7 @@ name: Sync Upstream
 
 env:
   # Required, URL to upstream (fork base)
-  UPSTREAM_URL: "https://github.com/upstream/trivoallan.git"
+  UPSTREAM_URL: "https://github.com/trivoallan/upstream.git"
   # Required, token to authenticate bot, could use ${{ secrets.PAT }}
   # Over here, we use a PAT instead to authenticate workflow file changes.
   WORKFLOW_TOKEN: ${{ secrets.PAT }}
