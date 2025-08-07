@@ -27,3 +27,4 @@ jobs:
           source_repo_path: trivoallan/upstream
           upstream_branch: main # defaults to main
           pr_labels: upstream-sync # optional, no default
+          is_with_tags: true
