@@ -1,0 +1,29 @@
+# File: .github/workflows/template-sync.yml
+
+on:
+  # cronjob trigger
+  schedule:
+  - cron: "0 0 1 * *"
+  # manual trigger
+  workflow_dispatch:
+jobs:
+  repo-sync:
+    runs-on: ubuntu-latest
+    # https://docs.github.com/en/actions/using-jobs/assigning-permissions-to-jobs
+    permissions:
+      contents: write
+      pull-requests: write
+
+    steps:
+      # To use this repository's private action, you must check out the repository
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: actions-template-sync
+        uses: AndreasAugustin/actions-template-sync@v2
+        with:
+          source_gh_token: ${{ secrets.PAT }}
+          target_gh_token: ${{ secrets.PAT }}
+          source_repo_path: trivoallan/upstream
+          upstream_branch: trunk # defaults to main
+          pr_labels: upstream-sync # optional, no default
